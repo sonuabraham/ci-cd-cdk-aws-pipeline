@@ -1,0 +1,20 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "960461e54af6b7efb57266ee452e68917b0a5ce45041990227a22c52a65d8d63": {
+      "source": {
+        "path": "CiCdAwsPipelineDemoStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "104612892635-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-104612892635-us-east-1",
+          "objectKey": "960461e54af6b7efb57266ee452e68917b0a5ce45041990227a22c52a65d8d63.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::104612892635:role/cdk-hnb659fds-file-publishing-role-104612892635-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

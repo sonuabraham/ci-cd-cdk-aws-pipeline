@@ -1,0 +1,240 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "assembly-CiCdAwsPipelineDemoStack-test": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-CiCdAwsPipelineDemoStack-test",
+        "displayName": "CiCdAwsPipelineDemoStack/test"
+      }
+    },
+    "assembly-CiCdAwsPipelineDemoStack-prod": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-CiCdAwsPipelineDemoStack-prod",
+        "displayName": "CiCdAwsPipelineDemoStack/prod"
+      }
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CiCdAwsPipelineDemoStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CiCdAwsPipelineDemoStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CiCdAwsPipelineDemoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://104612892635/us-east-1",
+      "properties": {
+        "templateFile": "CiCdAwsPipelineDemoStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::104612892635:role/cdk-hnb659fds-deploy-role-104612892635-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::104612892635:role/cdk-hnb659fds-cfn-exec-role-104612892635-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-104612892635-us-east-1/960461e54af6b7efb57266ee452e68917b0a5ce45041990227a22c52a65d8d63.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CiCdAwsPipelineDemoStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::104612892635:role/cdk-hnb659fds-lookup-role-104612892635-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CiCdAwsPipelineDemoStack.assets"
+      ],
+      "metadata": {
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketAEA9A052"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketPolicyF53CCC52"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleB27FAA37"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleDefaultPolicy7BDC1ABB"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Pipeline9850B417"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Source/sonuabraham_ci-cd-cdk-aws-pipeline/WebhookResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcesonuabrahamcicdcdkawspipelineWebhookResourceC63FBB0F"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRole231EEA2A"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRoleDefaultPolicyFB6C941C"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCodePipelineActionRole4E7A6C97"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCodePipelineActionRoleDefaultPolicy92C90290"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleDefaultPolicyE626265B"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Assets/FileAsset1/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1CodePipelineActionRoleC0EC649A"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/Assets/FileAsset1/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1CodePipelineActionRoleDefaultPolicy5F0BE7E8"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Run_Unit_Tests/Run Unit Tests/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestRunUnitTestsRunUnitTestsRole809C0405"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Run_Unit_Tests/Run Unit Tests/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestRunUnitTestsRunUnitTestsRoleDefaultPolicyAC38D98D"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Run_Unit_Tests/Run Unit Tests/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestRunUnitTestsRunUnitTests257BFF42"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Run_Unit_Tests/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestRunUnitTestsCodePipelineActionRoleCE63E531"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Run_Unit_Tests/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestRunUnitTestsCodePipelineActionRoleDefaultPolicy937CFF0F"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Pipeline/test/Manual_approval_before_production/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelinetestManualapprovalbeforeproductionCodePipelineActionRoleEB1EEFD9"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationRole57E559E8"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationRoleDefaultPolicyA225DA4E"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationDAA41400"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Assets/FileRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileRole59943A77"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Assets/FileRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileRoleDefaultPolicy14DB8755"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/Pipeline/Assets/FileAsset1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset185A67CB4"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CiCdAwsPipelineDemoStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CiCdAwsPipelineDemoStack"
+    }
+  }
+}
